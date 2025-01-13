@@ -133,15 +133,15 @@ async function fetchCryptoPrice(currency) {
             } else {
                 console.log(`${currency.charAt(0).toUpperCase() + currency.slice(1)} Price: $${price} is within the range, not sending webhook.`);
             }
-            // 发送价格到内容脚本
-            chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-                if (tabs.length > 0 && tabs[0].id) {
-                    console.log(`Active tab ID: ${tabs[0].id}`); // 打印当前活动标签页的 ID
-                    chrome.tabs.sendMessage(tabs[0].id, { action: 'updatePrice', currency, price });
-                    console.log(`Price sent to content script: ${currency} - $${price}`);
-                } else {
-                    console.warn('No active tab found to send price.');
-                }
+            // 发送价格到所有标签页
+            chrome.tabs.query({}, (tabs) => { // 查询所有标签
+                tabs.forEach(tab => {
+                    if (tab.id) {
+                        console.log(`Sending price to tab ID: ${tab.id}`); // 打印每个标签页的 ID
+                        chrome.tabs.sendMessage(tab.id, { action: 'updatePrice', currency, price });
+                        console.log(`Price sent to content script: ${currency} - $${price} in tab ID: ${tab.id}`);
+                    }
+                });
             });
         } else {
             console.warn(`Price not available for currency: ${currency}`);
