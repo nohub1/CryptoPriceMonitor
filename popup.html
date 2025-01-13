@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Crypto Price Monitor</title>
+    <script src="popup.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding-top: 0px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            width: 300px; /* 设置宽度 */
+            position: relative; /* 使子元素可以绝对定位 */
+        }
+        h2 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: calc(100% - 20px); /* 使输入框和选择框宽度一致 */
+            padding: 10px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            resize: none; /* 禁止调整大小 */
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745; /* 绿色背景 */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838; /* 深绿色背景 */
+        }
+        .flex-container {
+            display: flex;
+            justify-content: left;
+            align-items: center; /* 垂直居中对齐 */
+            padding-top: 10px;
+            padding-bottom: 0px;
+            margin-bottom: 5px;
+        }
+        .flex-container label {
+            margin: 0; /* 去掉标签的外边距 */
+        }
+        .flex-container select, .flex-container input {
+            width: 48%; /* 设置宽度为48%以适应同一行 */
+        }
+        #message {
+            margin-top: 10px;
+            color: green; /* 成功消息颜色 */
+            text-align: center;
+        }
+        .contact-info {
+            font-size: 12px;
+            color: #555;
+            position: absolute; /* 绝对定位 */
+            top: 5px; /* 距离顶部10px */
+            right: 20px; /* 距离右侧10px */
+            text-align: right; /* 右对齐 */
+        }
+        .contact-info a {
+            color: #007bff; /* 链接颜色 */
+            text-decoration: none; /* 去掉下划线 */
+        }
+        .contact-info a:hover {
+            text-decoration: underline; /* 悬停时添加下划线 */
+        }
+    </style>
+</head>
+<body>
+    <h2 id="extensionName"></h2>
+    
+    <label for="currency" id="currencyLabel"></label>
+    <select id="currency">
+        <option value="bitcoin">Bitcoin (BTC)</option>
+        <option value="ethereum">Ethereum (ETH)</option>
+    </select>
+
+    <label for="updateInterval" id="updateIntervalLabel"></label>
+    <input type="number" id="updateInterval" placeholder="60" />
+
+    <label for="minPrice" id="minPriceLabel"></label>
+    <input type="number" id="minPrice" placeholder="0" />
+    
+    <label for="maxPrice" id="maxPriceLabel"></label>
+    <input type="number" id="maxPrice" placeholder="100000" />    
+    
+    <div class="flex-container">
+        <input type="checkbox" id="enableWebhook" style="width: auto;"/>
+        <label for="webhook" id="webhookLabel" style="width: max-content;"></label>
+    </div>
+    <input type="text" id="webhook" placeholder="https://example.com/webhook" />
+
+    <label for="webhookTmpl" id="webhookTmplLabel"></label>
+    <textarea id="webhookTmpl" rows="3" placeholder=""></textarea>
+    
+    <button id="saveConfig"></button>
+    
+    <div id="message"></div> <!-- 用于显示消息 -->
+
+    <div class="contact-info">
+        <a href="https://github.com/nohub1/CryptoPriceMonitor" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+    </div>
+</body>
+</html>

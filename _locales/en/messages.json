@@ -1,0 +1,47 @@
+{
+    "extensionName": {
+        "message": "Crypto Price Monitor"
+    },
+    "currencyLabel": {
+        "message": "Currency:"
+    },
+    "updateIntervalLabel": {
+        "message": "Update Interval (seconds):"
+    },
+    "minPriceLabel": {
+        "message": "Minimum Price:"
+    },
+    "maxPriceLabel": {
+        "message": "Maximum Price:"
+    },
+    "webhookLabel": {
+        "message": "Webhook URL:"
+    },
+    "webhookTmplLabel": {
+        "message": "Webhook Template:"
+    },
+    "saveButton": {
+        "message": "Save Configuration"
+    },
+    "defaultCurrency": {
+        "message": "bitcoin"
+    },
+    "defaultUpdateInterval": {
+        "message": "60"
+    },
+    "defaultMinPrice": {
+        "message": "0"
+    },
+    "defaultMaxPrice": {
+        "message": "100000"
+    },
+    "defaultWebhook": {
+        "message": "https://example.com/webhook"
+    },
+    "placeholderWebhookTmpl": {
+        "message": "{\"message\":\"#COIN#Price:#PRICE#\"}"
+    },
+    "saveSuccess": {
+        "message": "Configuration saved!"
+    }
+}

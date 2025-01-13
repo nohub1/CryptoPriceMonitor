@@ -1,0 +1,47 @@
+{
+    "extensionName": {
+        "message": "加密币价格监控"
+    },
+    "currencyLabel": {
+        "message": "币种:"
+    },
+    "updateIntervalLabel": {
+        "message": "更新时间(秒):"
+    },
+    "minPriceLabel": {
+        "message": "最低价格:"
+    },
+    "maxPriceLabel": {
+        "message": "最高价格:"
+    },
+    "webhookLabel": {
+        "message": "Webhook URL:"
+    },
+    "webhookTmplLabel": {
+        "message": "推送模板："
+    },
+    "saveButton": {
+        "message": "保存配置"
+    },
+    "defaultCurrency": {
+        "message": "bitcoin"
+    },
+    "defaultUpdateInterval": {
+        "message": "60"
+    },
+    "defaultMinPrice": {
+        "message": "0"
+    },
+    "defaultMaxPrice": {
+        "message": "100000"
+    },
+    "defaultWebhook": {
+        "message": "https://example.com/webhook"
+    },
+    "placeholderWebhookTmpl": {
+        "message": "{\"message\":\"#COIN#价格:#PRICE#\"}"
+    },
+    "saveSuccess": {
+        "message": "配置保存成功!"
+    }
+}
